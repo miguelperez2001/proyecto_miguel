@@ -1,0 +1,47 @@
+{% extends "plantilla.html"%}
+{% block title %} P&aacute;gina principal {% endblock %}
+
+{% block content %}
+<style>
+    #contenedor1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #contenedor1 .parrafo {
+        flex: 1;
+    }
+
+    #contenedor1 .linea {
+        width: 3px;
+        background-color: #555;
+        margin: 10px 100px;
+    }
+</style>
+    <div id="contenedor1">
+        <div class="parrafo">
+            <h1>¿Quién soy?</h1>
+            <p>
+                Soy una persona joven y estoy cursando en el segundo año del grado superior de ASIR.
+                <br>
+                En esta página web encontrarás mis hobbies, a lo que dedico mis ratos libres.
+                En la sección de posts encontrarás más detalles.
+                <br>
+                <br>
+                Esta página web me ha gustado bastante ya que he descubierto una forma de expresar mis opiniones personales de forma que a nadie le moleste.
+            </p>
+        </div>
+        <div class="linea"></div>
+        <div class="parrafo">
+        <h1>En esta web encontrarás:</h1>
+            <p>
+                <ul>
+                    <li>La página principal.</li>
+                    <li>Una página sobre mis hobbies.</li>
+                    <li>Una página para iniciar sesión y registrar usuarios.</li>
+                    <li>Una página para saber acerca de mi proyecto.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+{% endblock %}

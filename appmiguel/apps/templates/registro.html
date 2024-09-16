@@ -1,0 +1,20 @@
+{% extends "plantilla.html" %}
+{% block title %}Registrarse{% endblock %}
+{% block content %}
+<style>
+    #formulario-registro{
+        margin-top: 20px; /* Ajusta este valor según sea necesario para separar el formulario del header */
+}
+</style>
+
+<h2 class="text-center my-4">Registro de Usuario</h2>
+
+<div id="formulario-registro">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" class="botones">Registrarse</button>
+    </form>
+</div>
+{% endblock %}

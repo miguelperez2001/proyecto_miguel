@@ -1,0 +1,57 @@
+{% extends "plantilla.html" %}
+{% block title %} Posts {% endblock %}
+{% block content %}
+<style>
+    body {
+    font-family: 'figtree', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.section {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid  #849d9c ;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+    </style>
+
+        <div class="container">
+
+            <div class="section">
+                <img src="/images/zelda.jpg" alt="Videojuegos">
+                <h2>Videojuegos</h2>
+                <p>Hablo sobre mi experiencia y opinión a algunos videojuegos.</p>
+                <button class="botones" onclick="window.location.href='/posts/videojuegos'">Entra aquí para ver más</button>
+
+            </div>
+
+            <div class="section">
+                <img src="/images/cocina.jpg" alt="Cocina">
+                <h2>Cocina</h2>
+                <p>Algunas recetas que he realizado últimamente.</p>
+                <button class="botones" onclick="window.location.href='/posts/cocina'">Entra aquí para ver más</button>
+            </div>
+
+            <div class="section">
+                <img src="/images/breakingbad.png" alt="Series">
+                <h2>Series</h2>
+                <p>Mi opinión sobre las series que me he visto.</p>
+                <button class="botones" onclick="window.location.href='/posts/series'">Entra aquí para ver más</button>
+            </div>
+ 
+        </div>
+
+{% endblock %}

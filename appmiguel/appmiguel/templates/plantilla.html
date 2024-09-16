@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock%}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <style>
+        body {
+            margin-top: 10px;
+            font-family: 'figtree', sans-serif;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #d9eceb;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .botones {
+            margin: 0 10px;
+            padding: 8px 16px;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            height: 60px;
+            width: 250px;
+            transition: background-color 0.3s;
+        }
+        .botones:hover {
+            background-color: #558;
+        }
+        footer {
+            margin-top: auto;
+        }
+        .contenedor {
+            color: #656564;
+            display: inline-block;
+        }
+        .menu-desplegable {
+            display: none;
+            position: relative;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            text-align: left;
+            left: 0;
+        }
+        a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .menu-desplegable a:hover {
+            background-color: #558;
+        }
+    </style>
+    <script>
+        function toggleMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <header>
+        <h1>MI APLICACIÓN WEB</h1>
+    </header>
+
+    <nav>
+        <button class="botones">
+            <a href="/">Página principal</a>
+        </button>
+
+        <button class="botones" onclick="toggleMenu('menuDesplegable2')">Posts <i class="fas fa-caret-down"></i></button>
+            <div id="menuDesplegable2" class="menu-desplegable">
+                <a href="/posts">posts</a>
+                <a href="/posts/videojuegos">Videojuegos</a>
+                <a href="/posts/cocina">Cocina</a>
+                <a href="/posts/series">Series</a>
+            </div>
+
+            <button class="botones" onclick="toggleMenu('menuDesplegable')">Usuario <i class="fas fa-caret-down"></i></button>
+            <div id="menuDesplegable" class="menu-desplegable">
+                <a href="/login">Iniciar sesión</a>
+                <a href="/register">Registrarse</a>
+                <a href="/logout">Cerrar sesi&oacute;n</a>
+            </div>
+
+        <button class="botones">
+            <a href="/proyecto">Acerca del proyecto</a>
+        </button>
+    </nav>
+
+</div>
+{% if messages %}
+    {% for message in messages %}
+    <div class="notificacion {{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <div class="contenedor">
+        <p>© 2024 Mi aplicación web. Todos los derechos reservados.</p>
+        <p>Desarrollado por Miguel Pérez Posada 2º ASIR</p>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "plantilla.html" %}
+{% block title %}Iniciar sesi&oacute;n{% endblock %}
+{% block content %}
+<h2 class="text-center my-4">Inicio de sesión</h2>
+<main class="container p-5">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+        <button type="submit" class="botones">Acceder</button>
+        </div>
+        <br>
+        <div>
+        <p>No tienes cuenta?</p>
+        <button class="botones">
+             <a href="/register">Registrarse</a>
+        </button>
+        </div>
+    </form>
+</main>
+{% endblock %}
